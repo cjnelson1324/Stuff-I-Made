@@ -22,6 +22,6 @@ def printcolor(text):
   print(f"{colored}{text}")
 
 while True:
-  signal.signal(signal.SIGNIT, handler)
+  signal.signal(signal.SIGINT, handler)
   printcolor("You've been hacked!")
   time.sleep(0.01)
