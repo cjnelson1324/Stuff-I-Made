@@ -1,0 +1,27 @@
+import signal
+import time
+import random
+import sys
+from colorama import init, Fore
+
+init(autoreset=True)
+
+def handler(signum, frame):
+  pass
+
+COLORS = [
+    Fore.BLACK, Fore.RED, Fore.GREEN, Fore.YELLOW, Fore.BLUE,
+    Fore.MAGENTA, Fore.CYAN, Fore.WHITE, Fore.LIGHTBLACK_EX,
+    Fore.LIGHTRED_EX, Fore.LIGHTGREEN_EX, Fore.LIGHTYELLOW_EX,
+    Fore.LIGHTBLUE_EX, Fore.LIGHTMAGENTA_EX, Fore.LIGHTCYAN_EX,
+    Fore.LIGHTWHITE_EX
+]
+
+def printcolor(text):
+  colored = random.choice(COLORS)
+  print(f"{colored}{text}")
+
+while True:
+  signal.signal(signal.SIGNIT, handler)
+  printcolor("You've been hacked!")
+  time.sleep(0.01)
